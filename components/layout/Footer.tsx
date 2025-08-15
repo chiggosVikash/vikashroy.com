@@ -75,7 +75,7 @@ export function Footer() {
             >
               <Linkedin className="h-5 w-5" />
             </motion.a>
-            <motion.a
+            {/* <motion.a
               href={socialLinks.twitter}
               target="_blank"
               rel="noopener noreferrer"
@@ -85,7 +85,7 @@ export function Footer() {
               whileTap={{ scale: 0.9 }}
             >
               <Twitter className="h-5 w-5" />
-            </motion.a>
+            </motion.a> */}
             <motion.a
               href={`mailto:${socialLinks.email}`}
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
