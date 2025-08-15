@@ -16,9 +16,9 @@ import {
 } from '@/lib/animations';
 
 export function About() {
-  const [titleRef, titleInView] = useIntersectionObserver({ threshold: 0.3 });
-  const [contentRef, contentInView] = useIntersectionObserver({ threshold: 0.2 });
-  const [cardsRef, cardsInView] = useIntersectionObserver({ threshold: 0.1 });
+  const [titleRef, titleInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.3 });
+  const [contentRef, contentInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.2 });
+  const [cardsRef, cardsInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });
 
   const highlights = [
     {
