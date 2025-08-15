@@ -15,8 +15,8 @@ import {
 } from '@/lib/animations';
 
 export function Testimonials() {
-  const [titleRef, titleInView] = useIntersectionObserver({ threshold: 0.3 });
-  const [cardsRef, cardsInView] = useIntersectionObserver({ threshold: 0.1 });
+  const [titleRef, titleInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.3 });
+  const [cardsRef, cardsInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (

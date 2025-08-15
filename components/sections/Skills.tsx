@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import { skills } from '@/lib/constants';
 import { Skill } from '@/types';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -30,9 +29,9 @@ const categories = {
 
 export function Skills() {
   const [activeCategory, setActiveCategory] = useState<keyof typeof categories>('all');
-  const [titleRef, titleInView] = useIntersectionObserver({ threshold: 0.3 });
-  const [skillsRef, skillsInView] = useIntersectionObserver({ threshold: 0.1 });
-  const [summaryRef, summaryInView] = useIntersectionObserver({ threshold: 0.2 });
+  const [titleRef, titleInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.3 });
+  const [skillsRef, skillsInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });
+  const [summaryRef, summaryInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.2 });
 
   const filteredSkills = activeCategory === 'all' 
     ? skills 
@@ -137,17 +136,18 @@ export function Skills() {
                   </CardHeader>
                   <CardContent>
                     <div className="relative">
-                      <Progress className="h-3 bg-muted/50" value={0} />
-                      <motion.div
-                        className="absolute top-0 left-0 h-3 bg-gradient-to-r from-primary to-blue-600 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={skillsInView ? { width: `${skill.level}%` } : { width: 0 }}
-                        transition={{ 
-                          duration: 1.2, 
-                          delay: index * 0.1 + 0.2,
-                          ease: [0.25, 0.46, 0.45, 0.94]
-                        }}
-                      />
+                      <div className="h-3 bg-muted/50 rounded-full overflow-hidden">
+                        <motion.div 
+                          className="h-full bg-gradient-to-r from-primary to-blue-600 rounded-full"
+                          initial={{ width: 0 }}
+                          animate={skillsInView ? { width: `${skill.level}%` } : { width: 0 }}
+                          transition={{ 
+                            duration: 1.2, 
+                            delay: index * 0.1 + 0.2,
+                            ease: [0.25, 0.46, 0.45, 0.94]
+                          }}
+                        />
+                      </div>
                     </div>
                   </CardContent>
                 </Card>

@@ -30,8 +30,8 @@ const categories = {
 export function Projects() {
   const [activeCategory, setActiveCategory] = useState<keyof typeof categories>('all');
   const [showAll, setShowAll] = useState(false);
-  const [titleRef, titleInView] = useIntersectionObserver({ threshold: 0.3 });
-  const [projectsRef, projectsInView] = useIntersectionObserver({ threshold: 0.1 });
+  const [titleRef, titleInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.3 });
+  const [projectsRef, projectsInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });
 
   const filteredProjects = activeCategory === 'all' 
     ? projects 

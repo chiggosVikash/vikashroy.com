@@ -31,9 +31,9 @@ export function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const [titleRef, titleInView] = useIntersectionObserver({ threshold: 0.3 });
-  const [formRef, formInView] = useIntersectionObserver({ threshold: 0.2 });
-  const [contactRef, contactInView] = useIntersectionObserver({ threshold: 0.2 });
+  const [titleRef, titleInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.3 });
+  const [formRef, formInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.2 });
+  const [contactRef, contactInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.2 });
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -105,11 +105,6 @@ export function Contact() {
       icon: <Linkedin className="h-6 w-6" />,
       name: 'LinkedIn',
       url: socialLinks.linkedin,
-    },
-    {
-      icon: <Twitter className="h-6 w-6" />,
-      name: 'Twitter',
-      url: socialLinks.twitter,
     },
   ];
 

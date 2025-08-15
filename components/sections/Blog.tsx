@@ -17,9 +17,9 @@ import {
 } from '@/lib/animations';
 
 export function Blog() {
-  const [titleRef, titleInView] = useIntersectionObserver({ threshold: 0.3 });
-  const [postsRef, postsInView] = useIntersectionObserver({ threshold: 0.1 });
-  const [subscribeRef, subscribeInView] = useIntersectionObserver({ threshold: 0.3 });
+  const [titleRef, titleInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.3 });
+  const [postsRef, postsInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });
+  const [subscribeRef, subscribeInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.3 });
 
   const featuredPosts = blogPosts.filter(post => post.featured).slice(0, 3);
 

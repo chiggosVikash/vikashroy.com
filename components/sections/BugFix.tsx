@@ -20,8 +20,8 @@ import {
 } from '@/lib/animations';
 
 export function BugFix() {
-  const [titleRef, titleInView] = useIntersectionObserver({ threshold: 0.3 });
-  const [contentRef, contentInView] = useIntersectionObserver({ threshold: 0.2 });
+  const [titleRef, titleInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.3 });
+  const [contentRef, contentInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.2 });
 
   const services = [
     {

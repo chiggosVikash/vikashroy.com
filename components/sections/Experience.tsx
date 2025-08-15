@@ -17,8 +17,8 @@ import {
 } from '@/lib/animations';
 
 export function Experience() {
-  const [titleRef, titleInView] = useIntersectionObserver({ threshold: 0.3 });
-  const [timelineRef, timelineInView] = useIntersectionObserver({ threshold: 0.1 });
+  const [titleRef, titleInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.3 });
+  const [timelineRef, timelineInView] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });
 
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
