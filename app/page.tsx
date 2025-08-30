@@ -1,13 +1,27 @@
 import { Hero } from '@/components/sections/Hero';
-import { ParticleBackground } from '@/components/ui/particle-background';
+import { About } from '@/components/sections/About';
+import { Services } from '@/components/sections/Services';
+import { Skills } from '@/components/sections/Skills';
+import { Projects } from '@/components/sections/Projects';
+import { Experience } from '@/components/sections/Experience';
+import { Testimonials } from '@/components/sections/Testimonials';
+import { Contact } from '@/components/sections/Contact';
+import { Footer } from '@/components/layout/Footer';
+import { BackToTop } from '@/components/ui/back-to-top';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background relative">
-      <ParticleBackground />
-      <main className="relative z-10">
-        <Hero />
-      </main>
-    </div>
+    <main className="min-h-screen">
+      <Hero />
+      <About />
+      <Services />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Testimonials />
+      <Contact />
+      <Footer />
+      <BackToTop />
+    </main>
   );
 }

@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowDown, Download, Github, Linkedin, Code2, Sparkles, Smartphone, Server, MapPin, Coffee, Star, Zap } from 'lucide-react';
 import { socialLinks, personalInfo } from '@/lib/constants';
 import { motion } from 'framer-motion';
+import { MotionBackground } from '@/components/ui/motion-background';
 import { 
   containerVariants, 
   heroTextVariants, 
@@ -28,16 +29,11 @@ export function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Enhanced animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-blue-500/5 to-purple-600/15 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/30 pointer-events-none" />
+      {/* Enhanced Motion Background */}
+      <MotionBackground variant="trendy" intensity="moderate" />
       
-      {/* Geometric background patterns */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary to-blue-500 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full blur-2xl animate-pulse delay-500" />
-      </div>
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/30 pointer-events-none" />
       
       {/* Enhanced floating tech icons */}
       <motion.div 
@@ -86,7 +82,7 @@ export function Hero() {
       </motion.div>
       
       <motion.div 
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        className="container-modern relative z-10"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -121,7 +117,7 @@ export function Hero() {
             {/* Main heading */}
             <motion.div variants={heroTextVariants}>
               <motion.h1 
-                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight"
+                className="leading-tight"
                 variants={staggerChildrenVariants}
                 initial="hidden"
                 animate="visible"
@@ -133,7 +129,7 @@ export function Hero() {
                   Hi, I'm
                 </motion.span>
                 <motion.span 
-                  className="block gradient-text animate-glow"
+                  className="block gradient-text"
                   variants={staggerItemVariants}
                 >
                   {personalInfo.name}
@@ -216,7 +212,7 @@ export function Hero() {
                 <Button
                   size="lg"
                   onClick={() => scrollToSection('#projects')}
-                  className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 transition-all duration-200 hover-lift px-8 py-3 text-lg"
+                  className="btn-primary px-8 py-3 text-lg"
                 >
                   <Code2 className="h-5 w-5 mr-2" />
                   View My Projects
@@ -233,7 +229,7 @@ export function Hero() {
                   size="lg"
                   variant="outline"
                   onClick={() => scrollToSection('#contact')}
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground glass-effect px-8 py-3 text-lg"
+                  className="btn-secondary px-8 py-3 text-lg"
                 >
                   Let's Talk
                 </Button>
@@ -246,7 +242,7 @@ export function Hero() {
                 <Button
                   size="lg"
                   variant="ghost"
-                  className="text-muted-foreground hover:text-primary glass-effect px-6 py-3"
+                  className="btn-ghost px-6 py-3"
                   aria-label="Download Resume"
                 >
                   <Download className="h-5 w-5 mr-2" />
@@ -286,6 +282,69 @@ export function Hero() {
                 <Linkedin className="h-6 w-6" />
               </motion.a>
             </motion.div>
+
+            {/* Featured Project Preview */}
+            <motion.div 
+              className="mt-12 lg:mt-16 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20 backdrop-blur-sm"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-foreground mb-2">Featured Project: DP Bazaar</h4>
+                  <p className="text-muted-foreground text-sm mb-3">
+                    MLM network platform with comprehensive web and Flutter applications featuring real-time analytics and multi-level commission tracking.
+                  </p>
+                  <div className="flex items-center space-x-4 text-xs text-muted-foreground">
+                    <span className="flex items-center">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                      Live Demo
+                    </span>
+                    <span className="flex items-center">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                      Flutter + NestJS
+                    </span>
+                    <span className="flex items-center">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+                      Real-time
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div 
+              className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-muted-foreground"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+            >
+              <div className="flex items-center space-x-2">
+                <div className="flex -space-x-1">
+                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full border-2 border-background"></div>
+                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-blue-500 rounded-full border-2 border-background"></div>
+                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full border-2 border-background"></div>
+                </div>
+                <span>Trusted by 15+ clients</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="flex space-x-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className="text-yellow-500">⭐</span>
+                  ))}
+                </div>
+                <span>5.0 rating</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span>Available for projects</span>
+              </div>
+            </motion.div>
           </div>
 
           {/* Stats sidebar */}
@@ -296,7 +355,7 @@ export function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.2, duration: 0.6 }}
             >
-              <Card className="bg-gradient-to-br from-primary/10 to-blue-500/10 border-primary/20 hover-lift">
+              <Card className="card-glass bg-gradient-to-br from-primary/10 to-blue-500/10 border-primary/20 hover-lift">
                 <CardContent className="p-6 text-center">
                   <motion.div 
                     className="text-3xl font-bold text-primary mb-2"
@@ -310,7 +369,7 @@ export function Hero() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/20 hover-lift">
+              <Card className="card-glass bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/20 hover-lift">
                 <CardContent className="p-6 text-center">
                   <motion.div 
                     className="text-3xl font-bold text-purple-600 mb-2"
@@ -324,7 +383,7 @@ export function Hero() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-green-500/10 to-cyan-500/10 border-green-500/20 hover-lift">
+              <Card className="card-glass bg-gradient-to-br from-green-500/10 to-cyan-500/10 border-green-500/20 hover-lift">
                 <CardContent className="p-6 text-center">
                   <motion.div 
                     className="text-3xl font-bold text-green-600 mb-2"
@@ -335,6 +394,35 @@ export function Hero() {
                     52
                   </motion.div>
                   <p className="text-sm text-muted-foreground">GitHub Repos</p>
+                </CardContent>
+              </Card>
+
+              {/* Additional Stats */}
+              <Card className="card-glass bg-gradient-to-br from-orange-500/10 to-red-500/10 border-orange-500/20 hover-lift">
+                <CardContent className="p-6 text-center">
+                  <motion.div 
+                    className="text-3xl font-bold text-orange-600 mb-2"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 1.7, type: "spring", stiffness: 200 }}
+                  >
+                    100%
+                  </motion.div>
+                  <p className="text-sm text-muted-foreground">Client Satisfaction</p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-glass bg-gradient-to-br from-indigo-500/10 to-blue-500/10 border-indigo-500/20 hover-lift">
+                <CardContent className="p-6 text-center">
+                  <motion.div 
+                    className="text-3xl font-bold text-indigo-600 mb-2"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 1.8, type: "spring", stiffness: 200 }}
+                  >
+                    24/7
+                  </motion.div>
+                  <p className="text-sm text-muted-foreground">Support Available</p>
                 </CardContent>
               </Card>
             </motion.div>

@@ -100,6 +100,73 @@ export function About() {
                 className="text-muted-foreground text-lg leading-relaxed"
                 variants={staggerItemVariants}
               >
+                My approach combines technical expertise with business understanding, ensuring that 
+                every solution I build not only meets technical requirements but also drives real business value. 
+                I believe in writing clean, maintainable code and creating systems that scale with your business.
+              </motion.p>
+
+              {/* Key Achievements */}
+              <motion.div 
+                className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20"
+                variants={staggerItemVariants}
+              >
+                <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  Key Achievements
+                </h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></span>
+                    Built 15+ production applications serving thousands of users
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></span>
+                    Achieved 99.9% uptime for critical business applications
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></span>
+                    Reduced application load times by 60% through optimization
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></span>
+                    Successfully migrated legacy systems to modern architectures
+                  </li>
+                </ul>
+              </motion.div>
+
+              {/* Development Philosophy */}
+              <motion.div 
+                className="mt-6 p-6 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-2xl border border-emerald-500/20"
+                variants={staggerItemVariants}
+              >
+                <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                  My Development Philosophy
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted-foreground">
+                  <div>
+                    <h5 className="font-medium text-foreground mb-2">🚀 Performance First</h5>
+                    <p>Every line of code is optimized for speed and scalability</p>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-foreground mb-2">🔒 Security by Design</h5>
+                    <p>Built-in security measures from the ground up</p>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-foreground mb-2">�� User Experience</h5>
+                    <p>Intuitive interfaces that users love to interact with</p>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-foreground mb-2">🔄 Maintainable Code</h5>
+                    <p>Clean, documented code that's easy to update and extend</p>
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.p 
+                className="text-muted-foreground text-lg leading-relaxed"
+                variants={staggerItemVariants}
+              >
                 My expertise spans from MLM platforms and e-commerce solutions to high-volume booking 
                 systems and grocery delivery platforms. I believe in clean architecture, performance 
                 optimization, and delivering user experiences that drive business growth.
